@@ -28,6 +28,8 @@ Go to file: <input type="text" id="filename-field" placeholder="filename">
   <script>
     function goToFile()
     {   
+      if (document.getElementById('filename-field').value != "")
+      {
       localStorage.setItem("filename", document.getElementById('filename-field').value);
         var path_url;
       if (document.getElementById('folder-option').value == "root")
@@ -41,6 +43,7 @@ Go to file: <input type="text" id="filename-field" placeholder="filename">
         path_url = "https://kmvirta1.github.io/" + document.getElementById('folder-option').value + "/" + document.getElementById('filename-field').value;
       location.href = path_url;
       }
+    }
     }
   </script>
 </body>
