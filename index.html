@@ -17,7 +17,14 @@ Set folder: <select id="folder-option">
   <br>
 Go to file: <input type="text" id="filename-field" placeholder="filename">
             <input type="button" id="go-button" value="Go" onclick="goToFile()">
-
+  <script>
+  function password()
+  {
+    var answer = prompt("What is password?");
+      if (answer != "Loading is better.")
+        window.close();
+  }
+  </script>
   
   <script>
     function goToFile()
