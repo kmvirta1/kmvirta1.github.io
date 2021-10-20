@@ -6,12 +6,24 @@
 </head>
 <body>
 <br><br>
+Folder: <select id="folder-option">
+  <option value="root">Volvo</option>
+  <option value="extensions">Saab</option>
+  <option value="code">Opel</option>
+  <option value="more">Audi</option>
+        </select>
+  
 Go to file: <input type="text" id="filename-field" placeholder="filename">
-            <input type="button" id="go-button" value="Go" disabled onclick="goToFile()">
+            <input type="button" id="go-button" value="Go" onclick="goToFile()">
   <script>
     function goToFile()
     {
-      var path_url = "kmvirta1.github.io/" + document.getElementById('folder-option').value + "/" + document.getElementById('filename-field').value;
+      if (document.getElementById('folder-option').value == "root")
+        var path_url = "kmvirta1.github.io/" + document.getElementById('filename-field').value;
+      window.open(path_url);
+      
+      else
+        path_url = "kmvirta1.github.io/" + document.getElementById('folder-option').value + "/" + document.getElementById('filename-field').value;
       window.open(path_url);
     }
   </script>
