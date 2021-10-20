@@ -4,7 +4,6 @@
   <charset="UTF-8">
   <title>File not found</title>
 </head>
-  <p id="message"></p>
 <body onload="error()">
 <br>
 K.M. VIRTA file location and storage base panel. © K.M. VIRTA 2021 <br><br>
@@ -18,10 +17,11 @@ Set folder: <select id="folder-option">
   <br>
 Go to file: <input type="text" id="filename-field" placeholder="filename">
             <input type="button" id="go-button" value="Go" onclick="goToFile()">
+  <p id="message"></p>
   <script>
   function error()
   {
-    document.getElementById('message').innerHTML = 'File "' + ocument.getElementById('filename-field').value + '" not found!';
+    document.getElementById('message').innerHTML = 'File "' + document.getElementById('filename-field').value + '" not found!';
     document.getElementById("message").style.color = "#ff0000";
   }
   </script>
