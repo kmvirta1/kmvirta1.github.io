@@ -7,6 +7,13 @@
 <body>
 <br><br>
 Go to file: <input type="text" id="filename-field" placeholder="filename">
-            <input type="button" id="go-button" value="Go" disabled>
+            <input type="button" id="go-button" value="Go" disabled onclick="goToFile()">
+  <script>
+    function goToFile()
+    {
+      var path_url = "kmvirta1.github.io/" + document.getElementById('folder-option').value + "/" + document.getElementById('filename-field').value;
+      window.open(path_url);
+    }
+  </script>
 </body>
 </html>
