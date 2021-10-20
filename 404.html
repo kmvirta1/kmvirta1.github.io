@@ -15,14 +15,13 @@ Set folder: <select id="folder-option">
         </select>
   <br>
 Go to file: <input type="text" id="filename-field" placeholder="filename">
-            <input type="button" id="go-button" value="Go" onclick="goToFile()">
+            <input type="button" id="go-button" value="Go" onclick="goToFile();">
   <p id="message"></p>
   <script>
   function error()
   {
     document.getElementById('message').innerHTML = 'File "' + localStorage.getItem("filename") + '" not found!';
     document.getElementById("message").style.color = "#ff0000";
-    localStorage.removeItem("filename");
   }
   </script>
   
