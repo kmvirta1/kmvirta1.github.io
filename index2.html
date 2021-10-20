@@ -8,7 +8,7 @@
   
 <br> <br>
   
-Folderr:     <select id="folder-option">
+Folderry:     <select id="folder-option">
   <option value="root">root</option>
   <option value="extensions">extensions</option>
   <option value="code">code</option>
@@ -21,15 +21,19 @@ Go to file: <input type="text" id="filename-field" placeholder="filename">
   <script>
     function goToFile()
     {
+        var path_url;
       if (document.getElementById('folder-option').value == "root")
-        var path_url = "kmvirta1.github.io/" + document.getElementById('filename-field').value;
+      {
+        path_url = "kmvirta1.github.io/" + document.getElementById('filename-field').value;
       window.open(path_url);
+      }
       
       else
+      {
         path_url = "kmvirta1.github.io/" + document.getElementById('folder-option').value + "/" + document.getElementById('filename-field').value;
       window.open(path_url);
+      }
     }
   </script>
-  
 </body>
 </html>
