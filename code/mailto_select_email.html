@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+Subject: <input type="text" id="subject"> <br>
+To: <input type="email" id="address" placeholder="joku@example.com">
+<input type="submit" id="send" value="Send" onclick="mailFunction();"> <br>
+<textarea id="message" rows="10" cols="24" onchange="elementsLength();">Type your message here...</textarea>
+
+<p id="textElement"></p>
+<body onload="elementsLength();">
+
+<script>
+
+function  mailFunction() {
+var subjectValue = document.getElementById('subject').value;
+var addressValue = document.getElementById('address').value;
+    if (addressValue == "")
+  alert("Enter email!");
+    
+    else
+  location.href = "mailto:" + addressValue + "?subject=" + subjectValue + "&body=" + document.getElementById('message').value;
+}
+
+function elementsLength() {
+var messageValue = document.getElementById('message').value;
+  document.getElementById('textElement').innerHTML = "Message length is " + messageValue.length + " characters.";
+}
+</script>
+</body>
+</html>
