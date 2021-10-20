@@ -5,16 +5,7 @@
   <title>kmvirta storage base</title>
 </head>
 <body>
-<br><br>
-Folder: <select id="folder-option">
-  <option value="root">root</option>
-  <option value="extensions">extensions</option>
-  <option value="code">code</option>
-  <option value="more">more</option>
-        </select>
-  <br>
-Go to file: <input type="text" id="filename-field" placeholder="filename">
-            <input type="button" id="go-button" value="Go" onclick="goToFile()">
+  
   <script>
     function goToFile()
     {
@@ -27,5 +18,18 @@ Go to file: <input type="text" id="filename-field" placeholder="filename">
       window.open(path_url);
     }
   </script>
+  
+<br> <br>
+  
+Folder: <select id="folder-option">
+  <option value="root">root</option>
+  <option value="extensions">extensions</option>
+  <option value="code">code</option>
+  <option value="more">more</option>
+        </select>
+  <br>
+Go to file: <input type="text" id="filename-field" placeholder="filename">
+            <input type="button" id="go-button" value="Go" onclick="goToFile()">
+
 </body>
 </html>
