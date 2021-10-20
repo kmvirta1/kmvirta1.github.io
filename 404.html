@@ -20,8 +20,9 @@ Go to file: <input type="text" id="filename-field" placeholder="filename">
   <script>
   function error()
   {
-    document.getElementById('message').innerHTML = 'File "' + document.getElementById('filename-field').value + '" not found!';
+    document.getElementById('message').innerHTML = 'File "' + localStorage.getItem("filename") + '" not found!';
     document.getElementById("message").style.color = "#ff0000";
+    localStorage.removeItem("filename");
   }
   </script>
   
