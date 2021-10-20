@@ -1,1 +1,48 @@
 document.getElementById("error").style.color = "#ff0000";
+
+<!DOCTYPE html>
+<html>
+<head>
+  <charset="UTF-8">
+  <title>kmvirta storage base</title>
+</head>
+  <p id="message"></p>
+<body onload="error()">
+<br>
+K.M. VIRTA file location and storage base panel. © K.M. VIRTA 2021 <br><br>
+  
+Set folder: <select id="folder-option">
+  <option value="root">root</option>
+  <option value="extensions">extensions</option>
+  <option value="code">code</option>
+  <option value="more">more</option>
+        </select>
+  <br>
+Go to file: <input type="text" id="filename-field" placeholder="filename">
+            <input type="button" id="go-button" value="Go" onclick="goToFile()">
+  <script>
+  function error()
+  {
+    document.getElementById('message').innerHTML = 'File "' + ocument.getElementById('filename-field').value + '" not found!'
+  }
+  </script>
+  
+  <script>
+    function goToFile()
+    {
+        var path_url;
+      if (document.getElementById('folder-option').value == "root")
+      {
+        path_url = "https://kmvirta1.github.io/" + document.getElementById('filename-field').value;
+      location.href = path_url;
+      }
+      
+      else
+      {
+        path_url = "https://kmvirta1.github.io/" + document.getElementById('folder-option').value + "/" + document.getElementById('filename-field').value;
+      location.href = path_url;
+      }
+    }
+  </script>
+</body>
+</html>
