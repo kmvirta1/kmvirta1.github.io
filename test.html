@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    <img src="/hidden/signIn.png" id="signInButton">
+    <img src="/hidden/signIn.png" id="signInBtn" onclick="onSignIn();">
     <script>
       
       function onSignIn(googleUser) {
@@ -22,6 +22,8 @@
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
+        
+        document.getElementById("signInBtn").src = "/hidden/signedIn.png";
       }
     </script>
     
