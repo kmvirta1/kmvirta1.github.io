@@ -20,8 +20,8 @@ Set folder: <select id="folder-option">
   <option value="more">more</option>
         </select>
   <br>
-Go to file: <input type="text" id="filename-field" placeholder="filename">
-            <input type="button" id="go-button" value="Go" onclick="goToFile();">
+Go to file: <input type="text" id="filename-field" placeholder="filename" disabled>
+            <input type="button" id="go-button" value="Go" onclick="goToFile();" disabled>
  
     <script>
         var disabled = true;
@@ -37,6 +37,15 @@ Go to file: <input type="text" id="filename-field" placeholder="filename">
         
         var id_token = googleUser.getAuthResponse().id_token;
           console.log("ID Token: " + id_token);
+          
+          if (profile.getEmail() === "kmvirta.device.systems@gmail.com" and profile.getId() === 107233898130080274902)
+          {
+              document.getElementById('filename-field').disabled = false;
+              document.getElementById('go-button').disabled = false;
+          }
+          
+          else
+              history.back();
       }
       
     function onFailure(error)
@@ -54,7 +63,7 @@ Go to file: <input type="text" id="filename-field" placeholder="filename">
 
   function password()
   {
-    var answer = confirm("Kirjaudu sisään storage base- tietokantaan Google-tililläsi käyttääksesi ominaisuuksia. Haluatko jatkaa?");
+    var answer = confirm("Kirjaudu sisään storage base- tietokantaan Google-tililläsi käyttääksesi ominaisuuksia.");
       
       if (answer == false)
         history.back();
