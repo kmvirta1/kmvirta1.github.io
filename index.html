@@ -45,12 +45,12 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
               
               document.getElementById('message').innerHTML = "✔ Correct Account!";
               document.getElementById('message').style.color = "#008000";
-              setTimeout(function(){document.getElementById('message').innerHTML = "";}, 2500);
+              setTimeout(function(){document.getElementById('message').innerHTML = "";}, 3000);
           }
          
           else
           {
-              document.getElementById('message').innerHTML = "❌ Wrong Account! Sign out.";
+              document.getElementById('message').innerHTML = "❌ Wrong Account! Please Sign out.";
               document.getElementById('message').style.color = "#ff0000";
           }
       }
@@ -69,6 +69,8 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
       document.getElementById('folder-option').disabled = true;
       document.getElementById('filename-field').disabled = true;
       document.getElementById('go-button').disabled = true;
+      
+      document.getElementById('message').innerHTML = "";
   }
     </script>
     
