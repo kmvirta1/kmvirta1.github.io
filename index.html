@@ -12,7 +12,6 @@
         <a href="#" onclick="signOut();" style="position: absolute; left: 1775px; top: 45px;">Sign out</a>
   
 K.M. VIRTA storage base- data navigation panel. © K.M. VIRTA 2021 <br><br>
-
 Set folder: <select id="folder-option" disabled>
   <option value="root">root</option>
   <option value="extensions">extensions</option>
@@ -24,13 +23,11 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
             <input type="button" id="go-button" value="Go" onclick="goToFile();" disabled>
     <p id="message"></p>
     <script>
-        
       /*function myConfirmation()
       {
       return 'Are you sure you want to quit?';
       }
           window.onbeforeunload = myConfirmation;*/
-        
       function onSignIn(googleUser)
       {
         var profile = googleUser.getBasicProfile();
