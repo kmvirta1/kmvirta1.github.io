@@ -53,14 +53,28 @@ Go to file: <input type="text" id="filename-field" placeholder="filename">
 </script>
     
   <script>
-  function password()
+  function password(googleUser)
   {
-    var answer = confirm("Kirjaudu sisään storage base- tietokantaan Google-tilillä? <br> Haluatko jatkaa?");
+    var answer = confirm("Kirjaudu sisään storage base- tietokantaan Google-tilillä?     Haluatko jatkaa?");
+      
       if (answer == false)
         history.back();
       
       else
+      {
         window.open("https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?redirect_uri=storagerelay%3A%2F%2Fhttps%2Fkmvirta1.github.io%3Fid%3Dauth248843&response_type=permission id_token&scope=email profile openid&openid.realm&include_granted_scopes=true&client_id=554183301177-lfthoav5lisuv431e1v658btqr0joi2v.apps.googleusercontent.com&ss_domain=https%3A%2F%2Fkmvirta1.github.io&fetch_basic_profile=true&gsiwebsdk=2&flowName=GeneralOAuthFlow", "signInWindow", "width=600,height=600");
+        
+        var profile = googleUser.getBasicProfile();
+          console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+          console.log('Full Name: ' + profile.getName());
+          console.log('Given Name: ' + profile.getGivenName());
+          console.log('Family Name: ' + profile.getFamilyName());
+          console.log("Image URL: " + profile.getImageUrl());
+          console.log("Email: " + profile.getEmail());
+        
+        var id_token = googleUser.getAuthResponse().id_token;
+          console.log("ID Token: " + id_token);
+      }
   }
   </script>
   
