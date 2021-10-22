@@ -82,7 +82,7 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
   function password()
   {
     var answer = confirm("Kirjaudu sisään storage base- tietokantaan Google-tililläsi.     Jatketaanko?");
-        signOut(); //Kirjaa käyttäjän ulos, jos käyttäjä on unohtanut kirjautua edellisellä kerralla ulos.
+        setTimeout(signOut, 3000);//Kirjaa käyttäjän ulos, jos käyttäjä on unohtanut kirjautua edellisellä kerralla ulos.
       
       if (answer == false)
         history.back();
