@@ -13,7 +13,7 @@
    
 K.M. VIRTA storage base- data navigation panel. © K.M. VIRTA 2021 <br><br>
 
-Set folder: <select id="folder-option">
+Set folder: <select id="folder-option" disabled>
   <option value="root">root</option>
   <option value="extensions">extensions</option>
   <option value="code">code</option>
@@ -39,6 +39,7 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
           
           if (profile.getId() == 107233898130080274902)
           {
+              document.getElementById('folder-option').disabled = false;
               document.getElementById('filename-field').disabled = false;
               document.getElementById('go-button').disabled = false;
           }
@@ -58,8 +59,12 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
     auth2.signOut().then(function () {
          console.log('User signed out.');
     });
+      document.getElementById('folder-option').disabled = true;
+      document.getElementById('filename-field').disabled = true;
+      document.getElementById('go-button').disabled = true;
   }
     </script>
+    
     <script>
   function password()
   {
