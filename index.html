@@ -24,11 +24,12 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
             <input type="button" id="go-button" value="Go" onclick="goToFile();" disabled>
     <p id="message"></p>
     <script>
-      function myConfirmation()
+        
+      /*function myConfirmation()
       {
       return 'Are you sure you want to quit?';
       }
-          window.onbeforeunload = myConfirmation;
+          window.onbeforeunload = myConfirmation;*/
         
       function onSignIn(googleUser)
       {
@@ -83,7 +84,8 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
     <script>    
   function password()
   {
-    var answer = confirm("Kirjaudu sisään storage base- tietokantaan Google-tililläsi käyttääksesi ominaisuuksia.");
+        signOut(); //Kirjaa käyttäjän ulos, jos käyttäjä on unohtanut kirjautua edellisellä kerralla ulos.
+    var answer = confirm("Kirjaudu sisään storage base- tietokantaan Google-tililläsi.     Jatketaanko?");
       
       if (answer == false)
         history.back();
