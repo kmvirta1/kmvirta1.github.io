@@ -47,7 +47,7 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
               document.getElementById('filename-field').disabled = false;
               document.getElementById('go-button').disabled = false;
               
-              document.getElementById('message').innerHTML = "✔ Correct Account!";
+              document.getElementById('message').innerHTML = "✔ Signed in";
               document.getElementById('message').style.color = "#008000";
               setTimeout(function(){document.getElementById('message').innerHTML = "";}, 3000);
           }
@@ -81,8 +81,8 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
     <script>    
   function password()
   {
-        signOut(); //Kirjaa käyttäjän ulos, jos käyttäjä on unohtanut kirjautua edellisellä kerralla ulos.
     var answer = confirm("Kirjaudu sisään storage base- tietokantaan Google-tililläsi.     Jatketaanko?");
+        signOut(); //Kirjaa käyttäjän ulos, jos käyttäjä on unohtanut kirjautua edellisellä kerralla ulos.
       
       if (answer == false)
         history.back();
