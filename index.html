@@ -37,7 +37,7 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
         var id_token = googleUser.getAuthResponse().id_token;
           console.log("ID Token: " + id_token);
           
-          if (profile.getEmail() === "kmvirta.device.systems@gmail.com" and profile.getId() === 107233898130080274902)
+          if (profile.getId() == 107233898130080274902)
           {
               document.getElementById('filename-field').disabled = false;
               document.getElementById('go-button').disabled = false;
