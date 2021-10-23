@@ -73,7 +73,7 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
     
   function error()
   {
-    document.getElemetById('filename-field').value = sessionStorage.getItem("filename");
+    document.getElementById('filename-field').value = sessionStorage.getItem("filename");
     document.getElementById('message').innerHTML = 'File "' + sessionStorage.getItem("filename") + '" not found!';
     document.getElementById('message').style.color = "#ff0000";
   }
