@@ -92,7 +92,7 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
     {   
       if (document.getElementById('filename-field').value != "")
       {
-      localStorage.setItem("filename", document.getElementById('filename-field').value);
+      sessionStorage.setItem("filename", document.getElementById('filename-field').value);
         var path_url;
       if (document.getElementById('folder-option').value == "root")
       {
