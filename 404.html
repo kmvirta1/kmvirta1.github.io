@@ -19,7 +19,7 @@ Set folder: <select id="folder-option" disabled>
   <option value="more">more</option>
         </select>
   <br>
-Go to file: <input type="text" id="filename-field" placeholder="filename" disabled>
+Go to file: <input type="text" id="filename-field" placeholder="filename" value="sessionStorage.getItem('filename');" disabled>
             <input type="button" id="go-button" value="Go" onclick="goToFile();" disabled>
     <p id="message"></p>
     <script>
