@@ -28,7 +28,6 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
       return 'Are you sure you want to quit?'; 
       }
           window.onbeforeunload = myConfirmation;*/
-        
         var profileId;
       function onSignIn(googleUser)
       {
@@ -73,6 +72,7 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
     auth2.signOut().then(function () {
          console.log('User signed out.');
     });
+      profileId = "";
       document.getElementById('folder-option').disabled = true;
       document.getElementById('filename-field').disabled = true;
       document.getElementById('go-button').disabled = true;
