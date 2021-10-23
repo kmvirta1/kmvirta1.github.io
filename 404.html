@@ -23,9 +23,11 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
             <input type="button" id="go-button" value="Go" onclick="goToFile();" disabled>
     <p id="message"></p>
     <script>
+        var profileId;
       function onSignIn(googleUser)
       {
         var profile = googleUser.getBasicProfile();
+          profileId = profile.getId();
           console.log("ID: " + profile.getId());
           console.log('Full Name: ' + profile.getName());
           console.log('Given Name: ' + profile.getGivenName());
@@ -80,7 +82,7 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
 
     function goToFile()
     {   
-      if (document.getElementById('filename-field').value != "" && profile.getId() == 107233898130080274902)
+      if (document.getElementById('filename-field').value != "" && profileId == 107233898130080274902)
       {
       sessionStorage.setItem("filename", document.getElementById('filename-field').value);
         var path_url;
