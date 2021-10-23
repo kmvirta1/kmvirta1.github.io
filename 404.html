@@ -1,36 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
   <title>File not found!</title>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="554183301177-lfthoav5lisuv431e1v658btqr0joi2v.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
-<body onload="error()">
-K.M. VIRTA file location and storage base panel. © K.M. VIRTA 2021 <br><br>
-  
-Set folder: <select id="folder-option">
+<body onload="error();">
+    <div class="g-signin2" data-onsuccess="onSignIn" data-onfailure="onFailure" data-theme="dark" data-width="136" style="position: absolute; left: 1775px;"></div>
+        <a href="#" onclick="signOut();" style="position: absolute; left: 1775px; top: 45px;">Sign out</a>
+    
+K.M. VIRTA storage base- data navigation panel. © K.M. VIRTA 2021 <br><br>
+Set folder: <select id="folder-option" disabled>
   <option value="root">root</option>
   <option value="extensions">extensions</option>
   <option value="code">code</option>
   <option value="more">more</option>
         </select>
   <br>
-Go to file: <input type="text" id="filename-field" placeholder="filename">
-            <input type="button" id="go-button" value="Go" onclick="goToFile();">
-  <p id="message"></p>
-  <script>
+Go to file: <input type="text" id="filename-field" placeholder="filename" disabled>
+            <input type="button" id="go-button" value="Go" onclick="goToFile();" disabled>
+    <p id="message"></p>
+    <script>
+      function onSignIn(googleUser)
+      {
+        var profile = googleUser.getBasicProfile();
+          console.log("ID: " + profile.getId());
+          console.log('Full Name: ' + profile.getName());
+          console.log('Given Name: ' + profile.getGivenName());
+          console.log('Family Name: ' + profile.getFamilyName());
+          console.log("Image URL: " + profile.getImageUrl());
+          console.log("Email: " + profile.getEmail());
+        
+        var id_token = googleUser.getAuthResponse().id_token;
+          console.log("ID Token: " + id_token);
+          
+          if (profile.getId() == 107233898130080274902)
+          {
+              document.getElementById('folder-option').disabled = false;
+              document.getElementById('filename-field').disabled = false;
+              document.getElementById('go-button').disabled = false;
+              
+              document.getElementById('message').innerHTML = "✔ Signed in";
+              document.getElementById('message').style.color = "#008000";
+              setTimeout(function(){document.getElementById('message').innerHTML = "";}, 3000);
+          }
+         
+          else
+          {
+              document.getElementById('message').innerHTML = "❌ Wrong Account! Please Sign out.";
+              document.getElementById('message').style.color = "#ff0000";
+          }
+      }
+      
+    function onFailure(error)
+    {
+         console.log(error);
+    }
+     
+   function signOut()
+  {
+       var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+         console.log('User signed out.');
+    });
+      document.getElementById('folder-option').disabled = true;
+      document.getElementById('filename-field').disabled = true;
+      document.getElementById('go-button').disabled = true;
+      
+      document.getElementById('message').innerHTML = "";
+  }
+    </script>
+    
+    <script>    
   function error()
   {
     document.getElementById('message').innerHTML = 'File "' + sessionStorage.getItem("filename") + '" not found!';
     document.getElementById('message').style.color = "#ff0000";
   }
-  </script>
-  
-  <script>
+
     function goToFile()
-    {
+    {   
       if (document.getElementById('filename-field').value != "")
       {
-      localStorage.setItem("filename", document.getElementById('filename-field').value);
+      sessionStorage.setItem("filename", document.getElementById('filename-field').value);
         var path_url;
       if (document.getElementById('folder-option').value == "root")
       {
