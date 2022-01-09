@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <body onload="download();">
-  <a id="F695" href="RND30 Compiler.exe" download="RND30 Compiler.exe">Download</a>
+  <!-- <body onload="download();"> -->
+  <p id="_$_89kr"></p>  
+  <a id="_$_cd6t" href="RND30 Compiler.exe" download="RND30 Compiler.exe">Download</a>
   <script>
+  const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  const myObj = JSON.parse(this.responseText);
+  document.getElementById("_$_89kr").innerHTML = myObj.name;
+  if (myObj.rights == "Kaikki") {
+  download();
+  }
+}
+xmlhttp.open("GET", "details.json");
+xmlhttp.send();  
+    
   function download()
 {
-  document.getElementById("F695").click();
+  document.getElementById("_$_cd6t").click();
 }
   </script>
   </body>
