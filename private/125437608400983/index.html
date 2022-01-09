@@ -4,16 +4,16 @@
   <p id="_$_89kr"></p>  
   <a id="_$_cd6t" href="RND30 Compiler.exe" download="RND30 Compiler.exe">Download</a>
   <script>
-  const xmlhttp = new XMLHttpRequest();
+  const _$_fgh2 = new XMLHttpRequest();
 xmlhttp.onload = function() {
   const myObj = JSON.parse(this.responseText);
-  document.getElementById("_$_89kr").innerHTML = myObj.rights;
+  document.getElementById("_$_89kr").innerHTML = "Nimi: " + myObj.filename;
   if (myObj.rights === "Kaikki" || localStorage.getItem('signedEmail') in myObj.rights === true) {
   download();
   }
 }
-xmlhttp.open("GET", "details.json");
-xmlhttp.send();  
+_$_fgh2.open("GET", "details.json");
+_$_fgh2.send();  
     
   function download() {
   document.getElementById("_$_cd6t").click();
