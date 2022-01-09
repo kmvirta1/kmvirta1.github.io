@@ -5,7 +5,7 @@
   <a id="_$_cd6t" href="RND30 Compiler.exe" download="RND30 Compiler.exe">Download</a>
   <script>
   const _$_fgh2 = new XMLHttpRequest();
-xmlhttp.onload = function() {
+_$_fgh2.onload = function() {
   const myObj = JSON.parse(this.responseText);
   document.getElementById("_$_89kr").innerHTML = "Nimi: " + myObj.filename; + "<br>" + "Päivämäärä: " + myObj.date;
   if (myObj.rights === "Kaikki" || localStorage.getItem('signedEmail') in myObj.rights === true) {
