@@ -8,7 +8,7 @@
 xmlhttp.onload = function() {
   const myObj = JSON.parse(this.responseText);
   document.getElementById("_$_89kr").innerHTML = myObj.rights;
-  if (myObj.rights == "Kaikki") {
+  if (myObj.rights == "Kaikki" || ) {
   download();
   }
 }
