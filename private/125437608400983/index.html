@@ -12,7 +12,7 @@ p {
   <p id="_$_89kr"></p>  
   <a id="_$_cd6t" href="RND30 Compiler.exe" download="RND30 Compiler.exe">Download</a>
   <script>
-  const _$_fgh2 = new XMLHttpRequest();
+  var _$_fgh2 = new XMLHttpRequest();
 _$_fgh2.onload = function() {
   const myObj = JSON.parse(this.responseText);
   document.getElementById("_$_89kr").innerHTML = "<p>Nimi: " + "<i>" + myObj.filename + "</i><br>" + "Päivämäärä: " + "<i>" + myObj.date + "</i><br>" + "Tyyppi: " + "<i>" + myObj.type + "</i><br>" + "Versio: " + "<i>" + myObj.version + "</i><br>" + "Tekijä: " + "<i>" + myObj.builder + "</i><br>" + "Omistaja: " + "<i>" + myObj.owner + "</i><br>" + "Käyttöoikeudet: " + "<i>" + myObj.rights + "</p>";
