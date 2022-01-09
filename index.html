@@ -42,7 +42,8 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
         
         var id_token = googleUser.getAuthResponse().id_token;
           console.log("ID Token: " + id_token);
-        
+        localStorage.setItem("signedEmail", profile.getEmail());
+          
           if (profile.getId() == 107233898130080274902)
           {
               document.getElementById('folder-option').disabled = false;
@@ -78,6 +79,7 @@ Go to file: <input type="text" id="filename-field" placeholder="filename" disabl
       document.getElementById('go-button').disabled = true;
       
       document.getElementById('message').innerHTML = "";
+      localStorage.removeItem("signedEmail");
   }
    
   function password()
