@@ -15,7 +15,7 @@ p {
   const _$_fgh2 = new XMLHttpRequest();
 _$_fgh2.onload = function() {
   const myObj = JSON.parse(this.responseText);
-  document.getElementById("_$_89kr").innerHTML = "Nimi: " + "<i>" + myObj.filename + "</i><br>" + "Päivämäärä: " + "<i>" + myObj.date;
+  document.getElementById("_$_89kr").innerHTML = "<p>Nimi: " + "<i>" + myObj.filename + "</i><br>" + "Päivämäärä: " + "<i>" + myObj.date + "</p>"
   if (myObj.rights === "Kaikki" || localStorage.getItem('signedEmail') in myObj.rights === true) {
   download();
   }
