@@ -8,11 +8,13 @@ p {
 a {
   font-size: 25px;
   font-family:courier;
+  position: absolute;
+  left: 100px;
   }
   </style>
 </head>
   
-  <!-- <body onload="download();"> position: absolute; left: 1775px; -->
+  <!-- <body onload="download();"> -->
   <p id="_$_89kr"></p>  
   <a id="_$_cd6t" href="source" download>Download</a>
   <script>
@@ -22,6 +24,7 @@ _$_fgh2.onload = function() {
   document.getElementById("_$_89kr").innerHTML = "<p>Nimi: " + "<i>" + myObj.filename + "</i><br>" + "Päivämäärä: " + "<i>" + myObj.date + "</i><br>" + "Tyyppi: " + "<i>" + myObj.type + "</i><br>" + "Versio: " + "<i>" + myObj.version + "</i><br>" + "Tekijä: " + "<i>" + myObj.builder + "</i><br>" + "Omistaja: " + "<i>" + myObj.owner + "</i><br>" + "Käyttöoikeudet: " + "<i>" + myObj.rights + "</p>";
   if (myObj.rights === "Kaikki" || localStorage.getItem('signedEmail') in myObj.rights === true) {
   document.getElementById("_$_cd6t").download = myObj.filename;
+  <a>Hello</a>
   download();
   }
 }
