@@ -1,18 +1,12 @@
     {
-      ["app": "World Racing",
+      "app": "World Racing",
       "latest": 1.0,
       "events": "-",
       "receive": "",
       "send": ""]
     
-      ["app": "Ping Pong",
+      "app": "Ping Pong",
       "latest": 2.1,
       "receive": "",
-      "send": ""]
-        
-      ["app": "",
-      "latest": 1.0,
-      "lastName": "roast",
-      "phoneNumber": "33333333",
-      "emailAddress": "denial.roast@learningcontainer.com"]
+      "send": ""
     }
