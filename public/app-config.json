@@ -1,11 +1,11 @@
 {
-      "World Racing": [{
+      "World_Racing": [{
       "latest": 1.0,
       "events": "-",
       "receive": "",
       "send": "" }],
     
-    "Ping Pong": [{
+    "Ping_Pong": [{
       "latest": 2.1,
       "receive": "",
       "send": "" }]
