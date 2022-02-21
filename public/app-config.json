@@ -6,13 +6,13 @@
       "events": "-",
       "receive": "",
       "send": ""
-    },
+    }
     {
       "app": "Ping Pong",
       "latest": 2.1,
       "receive": "",
       "send": "",
-    },
+    }
     {
       "app": "",
       "latest": 1.0,
