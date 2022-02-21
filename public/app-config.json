@@ -1,12 +1,13 @@
-    {
-      "app": "World Racing",
+{
+      "World Racing": [{
       "latest": 1.0,
       "events": "-",
       "receive": "",
-      "send": "",
+      "send": ""}],
     
-      "app": "Ping Pong",
+    "Ping Pong" [{
       "latest": 2.1,
       "receive": "",
-      "send": ""
-    }
+      "send": ""}]
+}
+
