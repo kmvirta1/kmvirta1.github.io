@@ -3,11 +3,11 @@
       "latest": 1.0,
       "events": "-",
       "receive": "",
-      "send": ""}],
+      "send": "" }],
     
-    "Ping Pong" [{
+    "Ping Pong": [{
       "latest": 2.1,
       "receive": "",
-      "send": ""}]
+      "send": "" }]
 }
 
