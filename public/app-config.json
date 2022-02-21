@@ -1,18 +1,16 @@
 {
-  "Apps": [
-    {
       "app": "World Racing",
       "latest": 1.0,
       "events": "-",
       "receive": "",
       "send": ""
-    }
+    },
     {
       "app": "Ping Pong",
       "latest": 2.1,
       "receive": "",
       "send": "",
-    }
+    },
     {
       "app": "",
       "latest": 1.0,
@@ -20,5 +18,3 @@
       "phoneNumber": "33333333",
       "emailAddress": "denial.roast@learningcontainer.com"
     }
-  ]
-}
