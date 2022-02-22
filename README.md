@@ -1,7 +1,9 @@
-# kmvirtaSB.github.io
-# K.M. VIRTA storage base
-
-AccessDenied with other!
-<br> Private Only
-
-© K.M. VIRTA 2021
+<html>
+<head>
+  <title>PHP-testi</title>
+</head>
+<body>
+  <p><?php echo 'Hei maailma!'; ?></p>
+  <p><?= 'Hei taas!' ?></p>
+</body>
+</html>
