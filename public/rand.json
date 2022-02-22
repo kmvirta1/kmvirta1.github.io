@@ -6,9 +6,8 @@
       "send": ""
         },
       
-      "Pong Ping": {
-      "latest": 0.6,
-      "events": "-",
+      "Ping_Pong": {
+      "latest": 2.1,
       "receive": "",
       "send": ""
         }
