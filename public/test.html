@@ -1,23 +1,69 @@
-<script>
-  var fileContent = 'sample text'; // As a sample, upload a text file.
-var file = new Blob([fileContent], {type: 'text/plain'});
-var metadata = {
-    'name': 'sampleName', // Filename at Google Drive
-    'mimeType': 'text/plain', // mimeType at Google Drive
-    'parents': ['### folder ID ###'], // Folder ID at Google Drive
-};
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <style>
+      #info {
+        border: 1px solid black;
+        padding: 0.25em;
+      }
+    </style>
+    
+    <script>
+      // Enter the API key from the Google Develoepr Console - to handle any unauthenticated
+      // requests in the code.
+      // The provided key works for this sample only when run from
+      // https://google-api-javascript-client.googlecode.com/hg/samples/requestSample.html
+      // To use in your own application, replace this API key with your own.
+      var apiKey = 'AIzaSyAdjHPT5Pb7Nu56WJ_nlrMGOAgUAtKjiPM';
 
-var accessToken = gapi.auth.getToken().access_token; // Here gapi is used for retrieving the access token.
-var form = new FormData();
-form.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
-form.append('file', file);
+      function handleClientLoad() {
+          gapi.load('client', makeRequest);
+      }
 
-var xhr = new XMLHttpRequest();
-xhr.open('post', 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id');
-xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-xhr.responseType = 'json';
-xhr.onload = () => {
-    console.log(xhr.response.id); // Retrieve uploaded file ID.
-};
-xhr.send(form);
-</script>
+      function initClient() {
+        gapi.client.init({
+          apiKey: apiKey,
+        }).then(makeRequest)
+      }
+
+      function makeRequest() {
+        gapi.client.setApiKey(apiKey);
+
+        function writeResponse(resp) {
+          var responseText;
+          if (resp.error && resp.error.errors[0].debugInfo == 'QuotaState: BLOCKED') {
+            responseText = 'Invalid API key provided. Please replace the "apiKey" value with your own.';
+          } else {
+            responseText = 'Short URL ' + shortUrl + ' expands to ' + resp.longUrl;
+          }
+          var infoDiv = document.getElementById('info');
+          infoDiv.innerHTML = '';
+          infoDiv.appendChild(document.createTextNode(responseText));
+        }
+
+        var shortUrl = document.getElementById('shortUrl').value;
+        var restRequest = gapi.client.request({
+           'path': '/urlshortener/v1/url',
+           'params' : {'shortUrl' : shortUrl}
+        });
+
+        restRequest.execute(writeResponse);
+      }
+    </script>
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad();"
+      onreadystatechange="if (this.readyState === 'complete') this.onload();">
+    </script>
+  </head>
+
+  <body>
+    <p>Enter a short URL and click "Expand URL" to get the full URL.</p>
+    <label for="shortUrl">Short URL </label>
+    <input id="shortUrl" type="text" value="http://goo.gl/fbsS" />
+    <button onclick="makeRequest();">
+      Expand URL
+    </button>
+    <div style="margin-top:0.5em;"><span id="info">Results</span></div>
+  </body>
+</html>
